@@ -19,8 +19,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.senseisurvey.R
 import com.example.senseisurvey.common.util.date.EMAIL_VALIDATION_REGEX
-import com.example.senseisurvey.ui.feature.welcome.TextFieldState
-import com.example.senseisurvey.ui.feature.welcome.textFieldStateSaver
 import java.util.regex.Pattern
 
 @Composable
@@ -89,8 +87,8 @@ private fun emailValidationError(email: String): String {
     return "Invalid email: $email"
 }
 
-private fun isEmailValid(email: String): Boolean {
-    return Pattern.matches(EMAIL_VALIDATION_REGEX, email)
+private fun isEmailValid(email: String?): Boolean {
+    return !email.isNullOrBlank() && Pattern.matches(EMAIL_VALIDATION_REGEX, email)
 }
 
 class EmailState(val email: String? = null) : TextFieldState(

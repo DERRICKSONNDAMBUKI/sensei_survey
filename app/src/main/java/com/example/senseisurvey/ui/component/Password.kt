@@ -96,3 +96,34 @@ fun Password(
         singleLine = true
     )
 }
+
+private fun isPasswordValid(password: String): Boolean {
+    // TODO: implement other validations of password
+    return !password.isNullOrBlank() && password.length > 6
+}
+
+private fun passwordAndConfirmationValid(password: String, confirmedPassword: String): Boolean {
+    return isPasswordValid(password) && password == confirmedPassword
+}
+
+private fun passWordValidationError(password: String): String {
+    return "Invalid password"
+}
+
+private fun passwordConfirmationError(): String {
+    return "Passwords don't match"
+}
+
+class PasswordState :
+    TextFieldState(validator = ::isPasswordValid, errorFor = ::passWordValidationError)
+
+class ConfirmPasswordState(private val passwordState: PasswordState) : TextFieldState() {
+    override val isValid: Boolean
+        get() = passwordAndConfirmationValid(passwordState.text, text)
+
+    override fun getError(): String? {
+        return if (showErrors()) {
+            passwordConfirmationError()
+        } else null
+    }
+}
