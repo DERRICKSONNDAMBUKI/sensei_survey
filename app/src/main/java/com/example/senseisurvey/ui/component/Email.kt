@@ -18,7 +18,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.senseisurvey.R
-import com.example.senseisurvey.common.util.date.EMAIL_VALIDATION_REGEX
+import com.example.senseisurvey.common.util.EMAIL_VALIDATION_REGEX
 import java.util.regex.Pattern
 
 @Composable
