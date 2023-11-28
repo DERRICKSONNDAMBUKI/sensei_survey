@@ -1,13 +1,12 @@
 package com.example.senseisurvey.ui.feature.auth.signUp
 
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.glance.layout.Column
 import com.example.senseisurvey.R
-import com.example.senseisurvey.ui.component.SignInSignUpScreen
+import com.example.senseisurvey.ui.design.SignInSignUpScreen
 import com.example.senseisurvey.ui.component.SignInSignUpTopBar
 import com.example.senseisurvey.ui.modifiers.supportWideScreen
 

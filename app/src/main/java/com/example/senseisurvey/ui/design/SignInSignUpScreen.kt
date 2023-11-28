@@ -1,4 +1,4 @@
-package com.example.senseisurvey.ui.component
+package com.example.senseisurvey.ui.design
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
