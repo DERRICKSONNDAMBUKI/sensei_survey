@@ -46,6 +46,7 @@ fun Password(
             },
         value = passwordState.text,
         onValueChange = {
+            passwordState.text = it
             passwordState.enableShowErrors()
         },
         textStyle = MaterialTheme.typography.bodyMedium,
@@ -97,8 +98,8 @@ fun Password(
     )
 }
 
-private fun isPasswordValid(password: String): Boolean {
-    // TODO: implement other validations of password
+private fun isPasswordValid(password: String?): Boolean {
+    // TODO: implement other validations on password
     return !password.isNullOrBlank() && password.length > 6
 }
 
