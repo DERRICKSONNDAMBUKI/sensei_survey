@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.glance.layout.Column
 import com.example.senseisurvey.R
+import com.example.senseisurvey.ui.component.SignInSignUpScreen
 import com.example.senseisurvey.ui.component.SignInSignUpTopBar
 import com.example.senseisurvey.ui.modifiers.supportWideScreen
 
@@ -45,14 +46,3 @@ fun SignUpScreen(
 fun SignUpContent(email: String, onSignUpSubmitted: (email: String, password: String) -> Unit) {
     TODO("Not yet implemented")
 }
-
-@Composable
-fun SignInSignUpScreen(
-    modifier: Modifier,
-    onSignInAsGuest: () -> Unit,
-    contentPadding: PaddingValues,
-    content: @Composable () -> Unit
-) {
-    TODO("Not yet implemented")
-}
-
