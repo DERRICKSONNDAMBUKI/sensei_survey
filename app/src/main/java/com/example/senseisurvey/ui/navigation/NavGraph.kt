@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.senseisurvey.ui.feature.auth.signUp.SignUpRoute
 import com.example.senseisurvey.ui.feature.welcome.WelcomeRoute
+import com.example.senseisurvey.ui.navigation.Destination.SIGN_IN_ROUTE
 import com.example.senseisurvey.ui.navigation.Destination.SIGN_UP_ROUTE
 import com.example.senseisurvey.ui.navigation.Destination.SURVEY_ROUTE
 import com.example.senseisurvey.ui.navigation.Destination.WELCOME_ROUTE
@@ -38,6 +39,16 @@ fun SenseiSurveyNavHost(
                 onSignInAsGuest = {
                     navHostController.navigate(SURVEY_ROUTE)
                 }
+            )
+        }
+
+        composable(SIGN_IN_ROUTE) {
+            val startingEmail = it.arguments?.getString("email")
+            SignUpRoute(
+                email = startingEmail,
+                onSignUpSubmitted = { navHostController.navigate(SURVEY_ROUTE) },
+                onSignInAsGuest = { navHostController.navigate(SURVEY_ROUTE) },
+                onNavUp = navHostController::navigateUp
             )
         }
 
