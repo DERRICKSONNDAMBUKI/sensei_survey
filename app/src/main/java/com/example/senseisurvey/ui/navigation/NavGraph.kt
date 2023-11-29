@@ -6,9 +6,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.senseisurvey.ui.feature.auth.signUp.SignUpRoute
+import com.example.senseisurvey.ui.feature.survey.SurveyResultScreen
+import com.example.senseisurvey.ui.feature.survey.SurveyRoute
 import com.example.senseisurvey.ui.feature.welcome.WelcomeRoute
 import com.example.senseisurvey.ui.navigation.Destination.SIGN_IN_ROUTE
 import com.example.senseisurvey.ui.navigation.Destination.SIGN_UP_ROUTE
+import com.example.senseisurvey.ui.navigation.Destination.SURVEY_RESULTS_ROUTE
 import com.example.senseisurvey.ui.navigation.Destination.SURVEY_ROUTE
 import com.example.senseisurvey.ui.navigation.Destination.WELCOME_ROUTE
 
@@ -60,6 +63,18 @@ fun SenseiSurveyNavHost(
                 onSignInAsGuest = { navHostController.navigate(SURVEY_ROUTE) },
                 onNavUp = navHostController::navigateUp
             )
+        }
+
+        composable(SURVEY_ROUTE) {
+            SurveyRoute(
+                onSurfaceComplete = { navHostController.navigate(SURVEY_RESULTS_ROUTE) },
+                onNavUp = navHostController::navigateUp
+            )
+        }
+        composable(SURVEY_RESULTS_ROUTE) {
+            SurveyResultScreen {
+                navHostController.popBackStack(WELCOME_ROUTE, false)
+            }
         }
     }
 }
