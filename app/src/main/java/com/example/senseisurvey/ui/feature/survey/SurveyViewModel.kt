@@ -38,7 +38,7 @@ class SurveyViewModel(private val photoUriManager: PhotoUriManager) : ViewModel(
         get() = _feelingAboutSelfiesResponse.value
 
     private val _selfieUri = mutableStateOf<Uri?>(null)
-    val selfie
+    val selfieUri
         get() = _selfieUri.value
 
     // ----- Survey status exposed as State -----
@@ -108,7 +108,12 @@ class SurveyViewModel(private val photoUriManager: PhotoUriManager) : ViewModel(
         _isNextEnabled.value = getIsNextEnabled()
     }
 
-    fun onFeelingAboutSelfieResponse(uri: Uri) {
+    fun onFeelingAboutSelfiesResponse(feeling: Float) {
+        _feelingAboutSelfiesResponse.value = feeling
+        _isNextEnabled.value = getIsNextEnabled()
+    }
+
+    fun onSelfieResponse(uri: Uri) {
         _selfieUri.value = uri
         _isNextEnabled.value = getIsNextEnabled()
     }
