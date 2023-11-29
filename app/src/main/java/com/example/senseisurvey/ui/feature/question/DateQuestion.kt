@@ -23,10 +23,10 @@ import androidx.compose.ui.unit.dp
 import com.example.senseisurvey.R
 import com.example.senseisurvey.common.util.date.getDefaultDateInMillis
 import com.example.senseisurvey.common.util.date.simpleDateFormatPattern
+import com.example.senseisurvey.ui.design.QuestionWrapper
 import com.example.senseisurvey.ui.theme.SenseiSurveyTheme
 import com.example.senseisurvey.ui.theme.slightlyDeemphasizedAlpha
 import kotlinx.datetime.toInstant
-import kotlinx.datetime.toLocalDate
 import java.util.Locale
 
 @Composable

@@ -31,6 +31,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.senseisurvey.R
+import com.example.senseisurvey.ui.design.QuestionWrapper
 import com.example.senseisurvey.ui.feature.survey.Superhero
 
 @Composable

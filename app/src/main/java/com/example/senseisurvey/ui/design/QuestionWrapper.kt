@@ -1,4 +1,4 @@
-package com.example.senseisurvey.ui.feature.question
+package com.example.senseisurvey.ui.design
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background

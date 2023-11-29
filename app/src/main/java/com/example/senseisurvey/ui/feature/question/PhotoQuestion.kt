@@ -35,6 +35,7 @@ import androidx.glance.LocalContext
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.senseisurvey.R
+import com.example.senseisurvey.ui.design.QuestionWrapper
 import com.example.senseisurvey.ui.theme.SenseiSurveyTheme
 
 @Composable
