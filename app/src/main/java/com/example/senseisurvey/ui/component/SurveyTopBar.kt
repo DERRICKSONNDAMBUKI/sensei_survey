@@ -2,6 +2,7 @@ package com.example.senseisurvey.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -13,6 +14,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProgressIndicatorDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -62,5 +64,16 @@ fun SurveyTopBar(
 
 @Composable
 fun TopBarTitle(modifier: Modifier = Modifier, questionIndex: Int, totalQuestionsCount: Int) {
-    TODO("Not yet implemented")
+    Row(modifier = modifier) {
+        Text(
+            text = (questionIndex + 1).toString(),
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = stronglyDeemphasizedAlpha)
+        )
+        Text(
+            text = stringResource(id = R.string.question_count, totalQuestionsCount),
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
+        )
+    }
 }

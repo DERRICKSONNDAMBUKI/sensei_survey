@@ -129,10 +129,10 @@ fun showTakeawayDatePicker(
     }
 }
 
-private fun Context.findActivity(): AppCompatActivity =
+private tailrec fun Context.findActivity(): AppCompatActivity =
     when (this) {
         is AppCompatActivity -> this
-        is ContextWrapper -> this.findActivity()
+        is ContextWrapper -> this.baseContext.findActivity()
         else -> throw IllegalArgumentException("could not find activity")
     }
 
